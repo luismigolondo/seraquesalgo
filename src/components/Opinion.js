@@ -30,13 +30,14 @@ const Opinion = props => {
     return (
         <div>
 				<div className='titlePronostic'>
-					<h2>Nombre de la ciudad: {props.ciudad} , {props.pais}</h2>
+					{props.ciudad && props.pais && <h2>Nombre de la ciudad: {props.ciudad} , {props.pais}</h2>}
 					<h4>Fecha: {today}</h4>
 					<h3>Sus condiciones</h3>
 					<p>Temperatura: </p>
 					<p>Descripcion: </p>
-					<p>Nombre del aeropuerto: {props.airportName}</p>
+					{props.airportName && <p>Nombre del aeropuerto: {props.airportName}</p>}
 					<p>Visibilidad: </p>
+					{props.error && <p>Error: {props.error}</p>}
 				</div>
 				<div className='opinion'>
 					<h3>Creemos que...</h3>

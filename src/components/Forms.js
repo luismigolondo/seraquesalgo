@@ -1,34 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Forms extends Component {
-
-	constructor(props) {
-	  super(props);
-	
-	  this.state = {
-	  	valor: ''
-	  };
-	}
-
-	cambio(valor)
-	{
-		this.setState({valor});
-		this.props.getInfo(valor);
-	}
-
-	render() {
+const Forms = props => {
 		return(
 			<div>
-				<p><input 
-				type="text" 
-				name="ciudad" 
-				placeholder="Ciudad..."
-				value = {this.state.busqueda} 
-				onChange={event => this.cambio(event.target.value)}/></p>
+				<form onSubmit={props.getInfo}>
+					<input 
+					type="text" 
+					name="ciudad" 
+					placeholder="Ciudad..."/>
+					<button>Buscar</button>
+				</form>
 			</div>
 
 		);
-	};
-
 }
 export default Forms;
