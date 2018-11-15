@@ -30,18 +30,16 @@ const Opinion = props => {
     return (
         <div>
 				<div className='titlePronostic'>
-					{props.ciudad && props.pais && <h2>Nombre de la ciudad: {props.ciudad} , {props.pais}</h2>}
-					<h4>Fecha: {today}</h4>
-					<h3>Sus condiciones</h3>
-					<p>Temperatura: </p>
-					<p>Descripcion: </p>
-					{props.airportName && <p>Nombre del aeropuerto: {props.airportName}</p>}
-					<p>Visibilidad: </p>
-					{props.error && <p>Error: {props.error}</p>}
-				</div>
-				<div className='opinion'>
-					<h3>Creemos que...</h3>
-					<p>Son muy buenas condiciones! buen dia para volar...</p>
+					{props.ciudad && props.pais && <p className='opinion__key'>Ciudad: <span className='opinion__value'>{props.ciudad} , {props.pais}</span></p>}
+					<p className='opinion__key'>Fecha: <span className='opinion__value'>{today}</span></p>
+					<p className='opinion__key'>Sus condiciones</p>
+					<p className='opinion__key'>Temperatura: <span className='opinion__value'></span></p>
+					<p className='opinion__key'>Descripcion: <span className='opinion__value'></span></p>
+					{props.airportName && <p className='opinion__key'>Aeropuerto: <span className='opinion__value'>{props.airportName}</span></p>}
+					<p className='opinion__key'>Visibilidad: </p>
+					{props.error && <p className='opinion__error'>Error 404: {props.error}</p>}
+					<h3 className='opinion__key'>Creemos que...</h3>
+					<span className='opinion__value'>Son muy buenas condiciones! buen dia para volar...</span>
 				</div>
 
 			</div>

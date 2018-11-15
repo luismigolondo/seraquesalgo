@@ -21,7 +21,7 @@ class App extends Component {
   getInfo = async (entrada) => {
     entrada.preventDefault();
     const ciudad = entrada.target.elements.ciudad.value;
-    const api_call = await fetch(`https://iatacodes.org/api/v6/autocomplete?api_key=${IATA_API_KEY}&query=${ciudad}`);
+    const api_call = await fetch(`https://cors-anywhere.herokuapp.com/http://iatacodes.org/api/v6/autocomplete?api_key=${IATA_API_KEY}&query=${ciudad}`);
     const data = await api_call.json();
     if(ciudad)
     {
@@ -44,7 +44,7 @@ class App extends Component {
         NombreCiudad: undefined,
         Pais: undefined,
         ArptoName: undefined,
-        error: "La ciudad no se encontro el la base de datos"
+        error: "La ciudad no se encontro en la base de datos"
        })
       }
     }
@@ -62,14 +62,32 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Title />
-        <Forms getInfo={this.getInfo}/>
-        <Opinion 
-        ciudad={this.state.NombreCiudad}
-        pais={this.state.Pais}
-        airportName={this.state.ArptoName}
-        error = {this.state.error}
-        />
+        <div className="wrapper">
+          <div className="main">
+            <div className="container">
+              <div className="row"></div>
+
+                <div className="col-xs-5 title-container">
+
+                  <Title />
+
+                </div>
+
+                <div className="col-xs-7 form-container">
+
+                  <Forms getInfo={this.getInfo}/>
+                  <Opinion 
+                  ciudad={this.state.NombreCiudad}
+                  pais={this.state.Pais}
+                  airportName={this.state.ArptoName}
+                  error = {this.state.error}
+                  />
+
+                </div>
+
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
