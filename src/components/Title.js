@@ -4,9 +4,10 @@ const Title = props => {
 
     return (
         <div>
-	        	<h1 className="title-container__title">SERAQUESALGO</h1>
-	        	<h3 className="title-container__subtitle">¡Aplicacion web simple para rapidamente averiguar <br/>
-				las condiciones meteorologicas del aeropuerto que desees!</h3>
+	        	<p className="title-container__title">SERAQUESALGO</p>
+	        	<p className="title-container__subtitle">¡Aplicacion web simple para rapidamente <br/>
+				averiguar las condiciones meteorologicas <br/>
+				del aeropuerto que desees!</p>
 		</div>
     );
 

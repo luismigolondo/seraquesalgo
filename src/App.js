@@ -65,16 +65,12 @@ class App extends Component {
         <div className="wrapper">
           <div className="main">
             <div className="container">
-              <div className="row"></div>
-
+              <div className="row">
                 <div className="col-xs-5 title-container">
-
                   <Title />
-
                 </div>
 
                 <div className="col-xs-7 form-container">
-
                   <Forms getInfo={this.getInfo}/>
                   <Opinion 
                   ciudad={this.state.NombreCiudad}
@@ -82,9 +78,8 @@ class App extends Component {
                   airportName={this.state.ArptoName}
                   error = {this.state.error}
                   />
-
                 </div>
-
+              </div>
             </div>
           </div>
         </div>

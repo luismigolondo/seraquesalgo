@@ -31,7 +31,7 @@ const Opinion = props => {
         <div>
 				<div className='titlePronostic'>
 					{props.ciudad && props.pais && <p className='opinion__key'>Ciudad: <span className='opinion__value'>{props.ciudad} , {props.pais}</span></p>}
-					<p className='opinion__key'>Fecha: <span className='opinion__value'>{today}</span></p>
+					<p className='opinion__key'>Fecha de peticion: <span className='opinion__value'>{today}</span></p>
 					<p className='opinion__key'>Sus condiciones</p>
 					<p className='opinion__key'>Temperatura: <span className='opinion__value'></span></p>
 					<p className='opinion__key'>Descripcion: <span className='opinion__value'></span></p>
